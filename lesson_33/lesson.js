@@ -32,8 +32,13 @@ function checkArray(array) {
     if (check) {
         let checkAge=0
            array.forEach(items => {
+
             if (typeof items.age != "undefined") {
-                checkAge++
+                if (typeof items.age != "number") {
+                    check=false
+                } else {
+                    checkAge++
+                }
             }
          })
          if (checkAge==0) {check = false;}
