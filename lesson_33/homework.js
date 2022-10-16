@@ -7,20 +7,13 @@
 
 const subjects = {
     mathematics: {
-        students: 200,
-        teachers: 6
-    },
-    biology: {
-        students: 120,
-        teachers: 7
-    },
-    chemistry: {
-        students: 100,
-        teachers: 3
-    },
-    geography: {
-        students: 60,
-        teachers: 2
+        students: 200, teachers: 6
+    }, biology: {
+        students: 120, teachers: 7
+    }, chemistry: {
+        students: 100, teachers: 3
+    }, geography: {
+        students: 60, teachers: 2
     },
 }
 
@@ -111,20 +104,19 @@ function getSortTech(obj = {}) {
     if (checkObj(obj)) {
         return null
     }
-    let arrayRes=[]
-    arrayRes=createArrayPredmet(obj)
-    return arrayRes.sort(function(a,b){
-            if (obj[a].teachers > obj[b].teachers) {
+    let arrayRes = []
+    arrayRes = createArrayPredmet(obj)
+    return arrayRes.sort(function (a, b) {
+        if (obj[a].teachers > obj[b].teachers) {
             return -1;
         }
         if (obj[a].teachers < obj[b].teachers) {
             return 1;
         }
         return 0;
-    }
-
-    )
+    })
 
 
 }
+
 console.log('Задание 5:', getSortTech(subjects))
